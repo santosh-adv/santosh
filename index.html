@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14241f" />
+  <meta name="description" content="The professional portfolio of Santosh Aryal, advocate — legal practice, advocacy, and justice." />
+  <title>Santosh Aryal | Law & Advocacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #14241f;
+      --forest-2: #20362e;
+      --cream: #f5f1e8;
+      --paper: #fffdf8;
+      --gold: #c8a96b;
+      --muted: #6e776f;
+      --line: rgba(20,36,31,.15);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--forest); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: auto; }
+    .topbar { background: var(--forest); color: #f5f1e8; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .topbar-inner { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .topbar span:last-child { color: #d7c49c; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,253,248,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; color: var(--gold); border: 1px solid var(--gold); font-family: var(--serif); font-size: 20px; }
+    .links { display: flex; align-items: center; gap: 30px; font-size: 13px; font-weight: 600; }
+    .links a { transition: color .2s; }
+    .links a:hover { color: #9b793d; }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 19px; background: var(--forest); color: white; border: 1px solid var(--forest); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: .2s ease; }
+    .nav-cta:hover, .button:hover { background: var(--gold); border-color: var(--gold); color: var(--forest); transform: translateY(-2px); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; padding: 9px 12px; color: var(--forest); font: inherit; }
+    .hero { background: var(--cream); overflow: hidden; position: relative; }
+    .hero:after { content: "§"; position: absolute; right: 5%; top: -105px; font-family: var(--serif); font-size: 520px; line-height: 1; color: rgba(20,36,31,.035); pointer-events: none; }
+    .hero-grid { min-height: 610px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 64px; padding-top: 52px; padding-bottom: 68px; position: relative; z-index: 1; }
+    .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; color: #98783f; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 34px; height: 1px; background: var(--gold); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 620px; margin-bottom: 24px; font: 500 clamp(48px, 6vw, 78px)/1.06 var(--serif); letter-spacing: -.045em; }
+    h1 em { color: #9b793d; font-weight: 400; }
+    .hero-copy { max-width: 500px; color: #5e6962; font-size: 16px; }
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+    .text-link { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+    .hero-visual { min-height: 440px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .portrait-frame { width: min(100%, 390px); height: 450px; background: var(--forest-2); position: relative; padding: 14px; }
+    .photo-frame { position: relative; }
+    .professional-photo { display: block; position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); object-fit: cover; object-position: center 25%; filter: saturate(.78); }
+    .photo-fallback { position: absolute; inset: 14px; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 14px; background: radial-gradient(ellipse at 50% 30%, #52645a 0%, #2a4036 42%, #172922 78%); border: 1px solid rgba(200,169,107,.55); color: rgba(245,241,232,.8); }
+    .fallback-initials { font: 500 112px/.9 var(--serif); color: rgba(245,241,232,.2); }
+    .fallback-label { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .portrait-note { z-index: 2; position: absolute; bottom: 14px; left: 14px; right: 14px; color: #f5f1e8; border-top: 1px solid rgba(200,169,107,.6); padding: 15px 14px 12px; font-family: var(--serif); font-size: 18px; background: linear-gradient(transparent, rgba(10,22,17,.86)); }
+    .portrait-note small { display: block; color: #d7c49c; font: 10px var(--sans); letter-spacing: .16em; text-transform: uppercase; margin-top: 5px; }
+    .seal { position: absolute; right: -24px; top: 54px; width: 92px; height: 92px; display: grid; place-items: center; border-radius: 50%; background: var(--paper); border: 1px solid var(--gold); color: var(--gold); font: 42px var(--serif); box-shadow: 0 10px 30px #14241f12; }
+    .vertical-note { position: absolute; left: -42px; bottom: 80px; writing-mode: vertical-rl; transform: rotate(180deg); color: #788178; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+    .stats { background: var(--forest); color: var(--cream); }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); padding: 27px 0; }
+    .stat { padding: 5px 30px; border-right: 1px solid rgba(245,241,232,.18); }
+    .stat:first-child { padding-left: 0; }
+    .stat:last-child { border: 0; }
+    .stat strong { display: block; color: var(--gold); font: 500 25px var(--serif); }
+    .stat span { color: #c3cbc3; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    section { padding: 100px 0; }
+    .section-head { max-width: 670px; margin-bottom: 48px; }
+    .section-head h2 { font: 500 clamp(34px, 4vw, 49px)/1.15 var(--serif); letter-spacing: -.035em; margin-bottom: 16px; }
+    .section-head p { color: var(--muted); max-width: 590px; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; align-items: start; }
+    .about-label { border-top: 1px solid var(--gold); padding-top: 18px; color: #98783f; font-size: 11px; letter-spacing: .17em; text-transform: uppercase; font-weight: 700; }
+    .about-copy h2 { font: 500 clamp(32px, 4vw, 45px)/1.18 var(--serif); letter-spacing: -.035em; margin-bottom: 24px; }
+    .about-copy p { color: var(--muted); }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+    .principle { border-top: 1px solid var(--line); padding-top: 15px; }
+    .principle strong { display: block; font: 500 19px var(--serif); margin-bottom: 5px; }
+    .principle span { font-size: 12px; color: var(--muted); }
+    .practice { background: var(--cream); }
+    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .practice-card { background: var(--paper); padding: 30px; min-height: 240px; border: 1px solid rgba(20,36,31,.08); transition: transform .2s, box-shadow .2s; }
+    .practice-card:hover { transform: translateY(-5px); box-shadow: 0 18px 35px #14241f0d; }
+    .card-number { font: 16px var(--serif); color: #aa8a4f; display: block; margin-bottom: 35px; }
+    .practice-card h3 { font: 500 23px var(--serif); margin-bottom: 12px; }
+    .practice-card p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
+    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+    .quote-panel { background: var(--forest); color: var(--cream); padding: 48px; position: relative; }
+    .quote-mark { color: var(--gold); font: 70px/.8 var(--serif); }
+    blockquote { margin: 20px 0 26px; font: 500 29px/1.35 var(--serif); }
+    .quote-panel p { color: #c0c9c1; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 0; }
+    .approach-copy h2 { font: 500 42px/1.15 var(--serif); letter-spacing: -.035em; }
+    .approach-copy p { color: var(--muted); }
+    .approach-list { list-style: none; padding: 0; margin: 25px 0 0; }
+    .approach-list li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .approach-list li:before { content: "↗"; color: #a88648; margin-right: 12px; }
+    .contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+    .contact h2 { font: 500 clamp(38px, 5vw, 55px)/1.1 var(--serif); letter-spacing: -.04em; }
+    .contact-copy { color: var(--muted); max-width: 440px; }
+    .contact-detail { padding: 17px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; font-size: 13px; }
+    .contact-detail span:first-child { color: var(--muted); }
+    .contact-detail span:last-child { font-weight: 600; text-align: right; }
+    .contact-form { background: var(--paper); padding: 32px; border: 1px solid var(--line); }
+    .contact-form label { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; margin-bottom: 7px; }
+    .contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--line); background: transparent; padding: 13px 14px; margin-bottom: 18px; font: 14px var(--sans); color: var(--forest); outline: none; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .form-note { color: var(--muted); font-size: 11px; margin: 13px 0 0; }
+    footer { background: #0e1a16; color: #d6ddd5; padding: 26px 0; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    footer span { color: #9ba89e; }
+    .back-top { color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
+    @media (max-width: 800px) {
+      .links { display: none; position: absolute; top: 81px; left: 0; right: 0; padding: 22px 24px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 18px; }
+      .links.open { display: flex; }
+      .nav-cta { display: none; }
+      .menu-toggle { display: block; }
+      .hero-grid, .about-grid, .approach-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+      .hero-grid { padding-top: 65px; }
+      .hero-visual { min-height: 400px; }
+      .portrait-frame { height: 390px; max-width: 340px; }
+      .vertical-note { left: 0; }
+      .seal { right: calc(50% - 190px); }
+      .about-grid { gap: 25px; }
+      .practice-grid { grid-template-columns: 1fr 1fr; }
+      .approach-grid, .contact-grid { gap: 42px; }
+      section { padding: 72px 0; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 32px, 1120px); }
+      .topbar-inner { justify-content: center; }
+      .topbar span:last-child { display: none; }
+      .brand { font-size: 18px; }
+      .hero-grid { min-height: auto; }
+      h1 { font-size: 48px; }
+      .hero-visual { min-height: 360px; }
+      .portrait-frame { height: 355px; }
+      .seal { width: 70px; height: 70px; font-size: 32px; right: -4px; }
+      .stats-grid { grid-template-columns: 1fr; padding: 12px 0; }
+      .stat, .stat:first-child { padding: 16px 0; border-right: 0; border-bottom: 1px solid rgba(245,241,232,.18); }
+      .stat:last-child { border-bottom: 0; }
+      .principles, .practice-grid { grid-template-columns: 1fr; }
+      .practice-card { min-height: auto; }
+      .card-number { margin-bottom: 18px; }
+      .quote-panel { padding: 32px 25px; }
+      blockquote { font-size: 25px; }
+      .contact-form { padding: 23px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner"><span>Law · Integrity · Justice</span><span>A thoughtful approach to legal practice</span></div>
+  </div>
+  <header>
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#home"><span class="brand-mark">S</span><span>Santosh Aryal</span></a>
+      <div class="links" id="navLinks">
+        <a href="#about">About</a><a href="#practice">Areas of Interest</a><a href="#approach">My Approach</a><a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="#contact">Get in touch <span>↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Advocate · Law &amp; Justice</p>
+          <h1>Justice begins with <em>understanding.</em></h1>
+          <p class="hero-copy">I’m Santosh Aryal, an advocate committed to principled legal work, clear communication, and a thoughtful approach to justice.</p>
+          <div class="hero-actions"><a class="button" href="#about">Discover my story <span>↗</span></a><a class="text-link" href="#practice">Explore my interests</a></div>
+        </div>
+        <div class="hero-visual" aria-label="Professional portrait area for Santosh Aryal">
+          <span class="vertical-note">Principle · Purpose · Perspective</span>
+          <div class="portrait-frame photo-frame">
+            <img class="professional-photo" src="./santosh-aryal.jpg.jpg" alt="Professional portrait of Advocate Santosh Aryal" onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';">
+            <div class="photo-fallback" id="photoFallback"><span class="fallback-initials">SA</span><span class="fallback-label">Add your professional photograph</span></div>
+            <div class="portrait-note">Santosh Aryal<small>Advocate · Law · Justice</small></div>
+          </div>
+          <div class="seal" aria-hidden="true">§</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong>Integrity</strong><span>The foundation of trust</span></div>
+        <div class="stat"><strong>Clarity</strong><span>Thoughtful legal reasoning</span></div>
+        <div class="stat"><strong>Fairness</strong><span>A commitment to justice</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-label">01 / A little about me</div>
+        <div class="about-copy">
+          <h2>Grounded in principle. Focused on people.</h2>
+          <p>As an advocate, I approach legal matters with care, preparation, and respect for the people whose lives are affected by them. I believe effective advocacy begins with understanding the facts, the law, and each client’s concerns.</p>
+          <p>My professional approach is built around ethical responsibility, clear communication, and careful legal analysis. I aim to make complex legal issues easier to understand while treating every matter with the seriousness it deserves.</p>
+          <div class="principles">
+            <div class="principle"><strong>Ethics first</strong><span>Respect for professional responsibility.</span></div>
+            <div class="principle"><strong>Keep learning</strong><span>Curiosity and continuous development.</span></div>
+            <div class="principle"><strong>People matter</strong><span>Empathy in every conversation.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="practice" id="practice">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">02 / Areas of interest</p>
+          <h2>Exploring the many dimensions of law.</h2>
+          <p>My areas of legal focus include the following. Please tailor this list to match your actual practice areas and professional experience before publishing.</p>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-card"><span class="card-number">01 —</span><h3>Constitutional Law</h3><p>Rights, governance, and the principles that shape public institutions.</p></article>
+          <article class="practice-card"><span class="card-number">02 —</span><h3>Criminal Justice</h3><p>Due process, legal safeguards, and the pursuit of a fair justice system.</p></article>
+          <article class="practice-card"><span class="card-number">03 —</span><h3>Civil &amp; Contract Law</h3><p>Legal relationships, obligations, and practical dispute resolution.</p></article>
+          <article class="practice-card"><span class="card-number">04 —</span><h3>Human Rights</h3><p>Dignity, equal treatment, and protections for fundamental freedoms.</p></article>
+          <article class="practice-card"><span class="card-number">05 —</span><h3>Legal Research</h3><p>Careful analysis of statutes, precedent, and emerging legal questions.</p></article>
+          <article class="practice-card"><span class="card-number">06 —</span><h3>Public Interest</h3><p>Understanding how law can serve communities and strengthen accountability.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap approach-grid">
+        <div class="quote-panel"><div class="quote-mark">“</div><blockquote>The measure of the law is not only what it says, but how fairly it serves people.</blockquote><p>A guiding principle</p></div>
+        <div class="approach-copy">
+          <p class="eyebrow">03 / My approach</p>
+          <h2>Thoughtful work. Honest communication.</h2>
+          <p>As an advocate, I value a measured and transparent approach to legal matters. Strong representation begins with understanding the facts, applying the relevant law, and communicating options and next steps clearly.</p>
+          <ul class="approach-list"><li>Listen carefully and understand the context</li><li>Research thoroughly and think critically</li><li>Communicate clearly and respectfully</li><li>Act with integrity and accountability</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">04 / Start a conversation</p>
+          <h2>Let’s connect.</h2>
+          <p class="contact-copy">For legal enquiries, professional collaboration, or other matters related to my practice, please get in touch using the details below.</p>
+          <div class="contact-detail"><span>Name</span><span>Adv. Santosh Aryal</span></div>
+          <div class="contact-detail"><span>Email</span><span>santosharyal.adv@gmail.com</span></div>
+          <div class="contact-detail"><span>Location</span><span>Nepal</span></div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label for="name">Your name</label><input id="name" name="name" placeholder="Enter your name" required>
+          <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required>
+          <label for="message">How can I help?</label><textarea id="message" name="message" placeholder="Write a short message..." required></textarea>
+          <button class="button" type="submit">Prepare email <span>↗</span></button>
+          <p class="form-note">This form opens your email app with a drafted message. Replace the sample email address and add your own professional portrait before publishing. This website does not itself submit or store enquiries.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div>© <span id="year"></span> Santosh Aryal. <span>Advocate · Designed with purpose.</span></div><a class="back-top" href="#home">Back to top ↑</a></div></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent('Portfolio enquiry from ' + data.get('name'));
+      const body = encodeURIComponent('Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\n\n' + data.get('message'));
+      window.location.href = 'mailto:santosharyal.adv@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
